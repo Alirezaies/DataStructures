@@ -13,7 +13,11 @@ int main(){
 
     cout<<"==========="<<endl;
     cout<<"Item 0: "<<s.getItem(0)<<endl;
-    s.removeAt(0);
+    cout<<"==========="<<endl;
+
+    s.add('K', 0);
+    s.add('K', 2);
     s.Traverse();
+    
     return 0;
 }
