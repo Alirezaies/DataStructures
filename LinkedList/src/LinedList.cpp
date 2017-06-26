@@ -119,7 +119,7 @@ void linkedlist::DeleteByIndex(int index){
         cout<<"List Is Empty!";
     else{
         node *tmp, *tmp2;
-        tmp = tmp2 = first;
+        tmp = first;
 
         while(tmp->next != NULL){
             for(int i = 0; i < mSize; i++){
