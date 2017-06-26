@@ -23,6 +23,7 @@ class linkedlist{
         void SearchByID(int ID);
         void SearchByData(type info);
         void DeleteByIndex(int index);
+        int getMsize();
         // void deleteelement(int);//delet node by value of data
         // void showlist();//print all node in list
         // void search_data(int);//search the linked list by value of data

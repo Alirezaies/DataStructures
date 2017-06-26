@@ -5,7 +5,11 @@ using namespace std;
 
 int main() {
 
-    linkedlist s();
+    linkedlist s;
+
+    s.Append(3);
+    s.Append(7);
+    s.Traverse();
 
     return 0;
 }
