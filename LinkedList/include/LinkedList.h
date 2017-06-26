@@ -18,6 +18,7 @@ class linkedlist{
         void Append(type info);
         void isEmpty();
         void Traverse();
+        void SearchByID(int ID);
         // void deleteelement(int);//delet node by value of data
         // void showlist();//print all node in list
         // void search_data(int);//search the linked list by value of data

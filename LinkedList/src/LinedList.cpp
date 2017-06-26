@@ -70,3 +70,26 @@ void linkedlist::Traverse(){
         }
     }
 }
+
+void linkedlist::SearchByID(int ID){
+    if (isEmpty) {
+        cout<<"List Is Empty!";
+    }
+
+    else{
+        node *tmp;
+        tmp = first;
+
+        while (tmp->next != NULL) {
+
+            for (int i = 0; i < mSize; i++) {
+
+                if (tmp->ID == ID) {
+                    cout<<"Found The Record With The Data Of: "<<tmp->Data;
+                };
+                tmp = tmp->next;
+
+            }
+        }
+    }
+}
