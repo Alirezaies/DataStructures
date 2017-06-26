@@ -4,6 +4,13 @@
 
 using namespace std;
 
+linkedlist::~linkedlist(){
+    mSize = 0;
+    last = 0;
+    first = 0;
+    delete first;
+    delete last;
+}
 void linkedlist::AddFirst(type info){
     if (!isEmpty())
         throw invalid_argument("This Is Not The First Node.\n");
