@@ -1,8 +1,6 @@
 #ifndef LINKEDLIST_H
 #define LINKEDLIST_H
 
-#include<cstddef>
-
 typedef int type;
 //node class
 struct node{
