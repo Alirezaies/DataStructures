@@ -33,7 +33,7 @@ void linkedlist::AddFirst(type info){
 void linkedlist::Append(type info)
 {
     int data1;
-    if(isEmpty() == true)
+    if(isEmpty())
     {
         //create first node
         node *tmp = new node;
@@ -62,7 +62,7 @@ bool linkedlist::isEmpty(){
 }
 
 void linkedlist::Traverse(){
-    if (isEmpty() == true)
+    if (isEmpty())
         cout<<"List Is Empty!\n";
 
     else{
@@ -81,7 +81,7 @@ void linkedlist::Traverse(){
 }
 
 void linkedlist::SearchByID(int ID){
-    if (isEmpty() == true)
+    if (isEmpty())
         cout<<"List Is Empty!\n";
 
     else{
@@ -105,7 +105,7 @@ void linkedlist::SearchByID(int ID){
 }
 
 void linkedlist::SearchByData(type info){
-    if (isEmpty() == true)
+    if (isEmpty())
         cout<<"List Is Empty!\n";
 
     else{
@@ -126,7 +126,7 @@ void linkedlist::SearchByData(type info){
 }
 
 void linkedlist::DeleteByIndex(int index){
-    if(isEmpty() == true)
+    if(isEmpty())
         cout<<"List Is Empty!\n";
     else{
         node *tmp, *tmp2;

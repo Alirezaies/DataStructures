@@ -19,11 +19,11 @@ class linkedlist{
         ~linkedlist();
         void AddFirst(type info);
         void Append(type info);
-        bool isEmpty();
         void Traverse();
         void SearchByID(int ID);
         void SearchByData(type info);
         void DeleteByIndex(int index);
+        bool isEmpty();
         int getMsize();
 
     private:
