@@ -38,7 +38,7 @@ void linkedlist::Append(type info)
         //create first node
         node *tmp = new node;
         tmp->next = NULL;
-        tmp->ID = mSize+1;
+        tmp->ID = mSize;
         first=tmp;
         first->Data = info;
         last=first;
@@ -49,7 +49,7 @@ void linkedlist::Append(type info)
         //create other node
         node *tmp = new node;
         tmp->next = NULL;
-        tmp->ID = mSize+1;
+        tmp->ID = mSize;
         last->next = tmp;
         last = tmp;
         last->Data = info;
@@ -70,8 +70,10 @@ void linkedlist::Traverse(){
         tmp = first;
 
         while (tmp->next != NULL) {
-            for (int i = 0; i <= mSize-1; i++) {
+            for (int i = 0; i <= mSize; i++) {
                 cout << "item[" << tmp->ID << "]: " <<tmp->Data<< '\n';
+                if(tmp->next == NULL)
+                    break;
                 tmp = tmp->next;
             }
         }
@@ -88,7 +90,7 @@ void linkedlist::SearchByID(int ID){
 
         while (tmp->next != NULL) {
 
-            for (int i = 0; i < mSize+1; i++) {
+            for (int i = 0; i < mSize-1; i++) {
 
                 if (tmp->ID == ID) {
                     cout<<"Found The Record With The Data Of: "<<tmp->Data<<"\n";
@@ -109,10 +111,9 @@ void linkedlist::SearchByData(type info){
     else{
         node *tmp;
         tmp = first;
-
         while (tmp->next != NULL) {
 
-            for (int i = 0; i < mSize+1; i++) {
+            for (int i = 0; i < mSize; i++) {
 
                 if (tmp->Data == info) {
                     cout<<"Found The Record With The ID Of: "<<tmp->ID;
@@ -132,7 +133,7 @@ void linkedlist::DeleteByIndex(int index){
         tmp = first;
 
         while(tmp->next != NULL){
-            for(int i = 0; i < mSize+1; i++){
+            for(int i = 0; i < mSize; i++){
                 if (tmp->ID == index-1){
                     tmp2 = tmp->next;
                     tmp->next = tmp->next->next;
