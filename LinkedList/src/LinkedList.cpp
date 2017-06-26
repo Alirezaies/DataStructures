@@ -90,9 +90,7 @@ void linkedlist::SearchByID(int ID){
         tmp = first;
 
         while (tmp->next != NULL) {
-
-            for (int i = 0; i < mSize-1; i++) {
-
+            for (int i = 0; i < mSize; i++) {
                 if (tmp->ID == ID) {
                     cout<<"Found The Record With The Data Of: "<<tmp->Data<<"\n";
                     break;
