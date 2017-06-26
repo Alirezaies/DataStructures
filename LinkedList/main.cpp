@@ -10,6 +10,6 @@ int main() {
     s.Append(3);
     s.Append(7);
     s.Traverse();
-    s.SearchByID(1);
+    s.SearchByData(5);
     return 0;
 }

@@ -88,16 +88,23 @@ void linkedlist::SearchByID(int ID){
     else{
         node *tmp;
         tmp = first;
-
+        int flag = 0;
         while (tmp->next != NULL) {
             for (int i = 0; i < mSize; i++) {
                 if (tmp->ID == ID) {
-                    cout<<"Found The Record With The Data Of: "<<tmp->Data<<"\n";
+                    cout<<"Found The First Record With The Data Of: "<<tmp->Data<<"\n";
+                    flag = 1;
                     break;
                 }
+                if(tmp->next == NULL)
+                    break;
                 else{
                     tmp = tmp->next;
                 }
+            }
+
+            if (flag == 0) {
+                cout<<"No Entry Found!\n";
             }
         }
     }
@@ -110,16 +117,23 @@ void linkedlist::SearchByData(type info){
     else{
         node *tmp;
         tmp = first;
+        int flag = 0;
         while (tmp->next != NULL) {
 
             for (int i = 0; i < mSize; i++) {
 
                 if (tmp->Data == info) {
-                    cout<<"Found The Record With The ID Of: "<<tmp->ID;
+                    cout<<"Found The Record With The ID Of: "<<tmp->ID<<endl;
+                    flag = 1;
                     break;
-                };
+                }
+                if(tmp->next == NULL)
+                    break;
                 tmp = tmp->next;
             }
+        }
+        if (flag == 0) {
+            cout<<"No Entry Found."<<endl;
         }
     }
 }
