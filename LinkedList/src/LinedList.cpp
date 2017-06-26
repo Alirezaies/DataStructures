@@ -128,9 +128,14 @@ void linkedlist::DeleteByIndex(int index){
                     tmp->next = tmp->next->next;
                     delete tmp2;
                 }
+
+                if (tmp->ID == mSize-1) {
+                    tmp->next = NULL;
+                    last = tmp;
+                }
                 tmp->ID -= 1; //Sort The IDs
             }
         }
-        tmp = temp->next; //TODO: Fix (last)
+        tmp = temp->next;
     }
 }
