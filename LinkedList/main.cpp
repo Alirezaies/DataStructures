@@ -10,6 +10,7 @@ int main() {
     s.Append(3);
     s.Append(7);
     s.Traverse();
-    s.SearchByData(5);
+    s.DeleteByIndex(1);
+    s.Traverse();
     return 0;
 }

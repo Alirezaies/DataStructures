@@ -145,21 +145,25 @@ void linkedlist::DeleteByIndex(int index){
         node *tmp, *tmp2;
         tmp = first;
 
-        while(tmp->next != NULL){
-            for(int i = 0; i < mSize; i++){
-                if (tmp->ID == index-1){
-                    tmp2 = tmp->next;
-                    tmp->next = tmp->next->next;
-                    delete tmp2;
-                }
-
-                if (tmp->ID == mSize-1) {
-                    tmp->next = NULL;
-                    last = tmp;
-                }
-                tmp->ID -= 1; //Sort The IDs
-            }
-        }
+        if (last->ID == 0) {
+            // TODO: Fix The Deletion.
+        };
+        // while(tmp->next != NULL){
+        //     for(int i = 0; i < mSize; i++){
+        //         cout<<"Here!\n";
+        //         if (tmp->ID == index-1){
+        //             tmp2 = tmp->next;
+        //             tmp->next = tmp->next->next;
+        //             delete tmp2;
+        //         }
+        //
+        //         if (tmp->ID == mSize-1) {
+        //             tmp->next = NULL;
+        //             last = tmp;
+        //         }
+        //         tmp->ID -= 1; //Sort The IDs
+        //     }
+        // }
         tmp = tmp->next;
     }
 }
