@@ -24,9 +24,7 @@ class linkedlist{
         void SearchByData(type info);
         void DeleteByIndex(int index);
         int getMsize();
-        // void deleteelement(int);//delet node by value of data
-        // void showlist();//print all node in list
-        // void search_data(int);//search the linked list by value of data
+
     private:
         node *first;//stor first node of link
         node *last;//stor last node of link

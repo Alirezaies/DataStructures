@@ -59,10 +59,9 @@ void linkedlist::Traverse(){
         tmp = first;
 
         while (tmp->next != NULL) {
-            for (int i = 0; i < mSize; i++) {
-                cout << "item[" << i << "]: " <<tmp->Data<< '\n';
+            for (int i = 0; i <= mSize-1; i++) {
+                cout << "item[" << tmp->ID << "]: " <<tmp->Data<< '\n';
                 tmp = tmp->next;
-                cout<<"Done!"<<endl;
             }
         }
     }
