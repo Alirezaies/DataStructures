@@ -1,27 +1,29 @@
 #ifndef LINKEDLIST_H
 #define LINKEDLIST_H
 
-template<typename E>
-struct Node{
-    E data;
-    Node<E> *next;
-    Node(E item, Node<E> *ptr=0):data(item), next(ptr){}
+typedef int type;
+//node class
+struct node{
+    type Data;
+    int ID; //Help Us For Searching By Index;
+    node *next;
+    // friend class linkedlist;
 };
 
-class LinkedList{
-public:
-    LinkedList();
-    ~LinkedList();
-    int Lenght() const {return(mSize);};
-    bool isEmpty() const {return(mSize == 0);};
-    bool Traverse() const;
-    void Append(const T& info);
-    const T& getItem(int index) const;
-    void removeAt(int index);
-    void Clear();
-    
-private:
-    Node<T> *head;
-    int mSize;
+//linked list class
+class linkedlist{
+    public:
+        linkedlist(){first = NULL, mSize = 0;}
+        void AddFirst(type info);
+        void Append(type info);
+        void isEmpty();
+        void Traverse();
+        // void deleteelement(int);//delet node by value of data
+        // void showlist();//print all node in list
+        // void search_data(int);//search the linked list by value of data
+    private:
+        node *first;//stor first node of link
+        node *last;//stor last node of link
+        int mSize;
 };
 #endif
