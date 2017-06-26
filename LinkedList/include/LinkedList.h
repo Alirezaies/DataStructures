@@ -15,7 +15,7 @@ struct node{
 //linked list class
 class linkedlist{
     public:
-        linkedlist(){first = NULL; mSize = 0;};
+        linkedlist();
         ~linkedlist();
         void AddFirst(type info);
         void Append(type info);
