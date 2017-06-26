@@ -5,8 +5,8 @@
 using namespace std;
 
 void linkedlist::AddFirst(type info){
-    if (!isEmpty)
-        throw invalid_argument('This Is Not The First Node.')
+    if (!isEmpty())
+        throw invalid_argument("This Is Not The First Node.");
     else{
         node *tmp = new node;
         tmp->next = NULL;
@@ -22,7 +22,7 @@ void linkedlist::AddFirst(type info){
 void linkedlist::Append(type info)
 {
     int data1;
-    if(isEmpty)
+    if(isEmpty())
     {
         //create first node
         node *tmp = new node;
@@ -46,12 +46,12 @@ void linkedlist::Append(type info)
     }
 }
 
-void linkedlist::isEmpty(){
+bool linkedlist::isEmpty(){
     return (mSize == 0);
 }
 
 void linkedlist::Traverse(){
-    if (isEmpty)
+    if (isEmpty())
         cout<<"List Is Empty!";
 
     else{
@@ -70,7 +70,7 @@ void linkedlist::Traverse(){
 }
 
 void linkedlist::SearchByID(int ID){
-    if (isEmpty)
+    if (isEmpty())
         cout<<"List Is Empty!";
 
     else{
@@ -84,16 +84,17 @@ void linkedlist::SearchByID(int ID){
                 if (tmp->ID == ID) {
                     cout<<"Found The Record With The Data Of: "<<tmp->Data;
                     break;
-                };
-                else
+                }
+                else{
                     tmp = tmp->next;
+                }
             }
         }
     }
 }
 
 void linkedlist::SearchByData(type info){
-    if (isEmpty)
+    if (isEmpty())
         cout<<"List Is Empty!";
 
     else{
@@ -115,7 +116,7 @@ void linkedlist::SearchByData(type info){
 }
 
 void linkedlist::DeleteByIndex(int index){
-    if(isEmpty)
+    if(isEmpty())
         cout<<"List Is Empty!";
     else{
         node *tmp, *tmp2;
@@ -136,6 +137,6 @@ void linkedlist::DeleteByIndex(int index){
                 tmp->ID -= 1; //Sort The IDs
             }
         }
-        tmp = temp->next;
+        tmp = tmp->next;
     }
 }

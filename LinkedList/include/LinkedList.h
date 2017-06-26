@@ -1,6 +1,8 @@
 #ifndef LINKEDLIST_H
 #define LINKEDLIST_H
 
+#include<cstddef>
+
 typedef int type;
 //node class
 struct node{
@@ -16,7 +18,7 @@ class linkedlist{
         linkedlist(){first = NULL, mSize = 0;}
         void AddFirst(type info);
         void Append(type info);
-        void isEmpty();
+        bool isEmpty();
         void Traverse();
         void SearchByID(int ID);
         void SearchByData(type info);
