@@ -5,7 +5,7 @@
 using namespace std;
 
 void linkedlist::AddFirst(type info){
-    if (mSize != 0)
+    if (!isEmpty)
         throw invalid_argument('This Is Not The First Node.')
     else{
         node *tmp = new node;
@@ -22,7 +22,7 @@ void linkedlist::AddFirst(type info){
 void linkedlist::Append(type info)
 {
     int data1;
-    if(mSize == 0)
+    if(isEmpty)
     {
         //create first node
         node *tmp = new node;
