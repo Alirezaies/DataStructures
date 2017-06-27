@@ -9,8 +9,10 @@ int main() {
 
     s.Append(3);
     s.Append(7);
+    s.Append(0);
+    s.Append(9);
+    s.Append(5);
     s.Traverse();
-    s.DeleteByIndex(1);
-    s.Traverse();
+    
     return 0;
 }

@@ -55,6 +55,7 @@ void linkedlist::Append(type info)
         last = tmp;
         last->Data = info;
         mSize+=1;
+
     }
 }
 
@@ -63,20 +64,15 @@ bool linkedlist::isEmpty(){
 }
 
 void linkedlist::Traverse(){
+    node *p;
+    p = first;
     if (isEmpty())
         cout<<"List Is Empty!\n";
 
     else{
-        node *tmp;
-        tmp = first;
-
-        while (tmp->next != NULL) {
-            for (int i = 0; i <= mSize; i++) {
-                cout << "item[" << tmp->ID << "]: " <<tmp->Data<< '\n';
-                if(tmp->next == NULL)
-                    break;
-                tmp = tmp->next;
-            }
+        for (int i = 0; i < mSize; i++) {
+            cout<<"Item ["<<i<<"]: "<<p->Data<<endl;
+            p = p->next;
         }
     }
 }
@@ -144,14 +140,24 @@ void linkedlist::DeleteByIndex(int index){
     else{
         node *tmp, *tmp2;
         tmp = first;
-
+        // TODO: Sort The IDs! (Not For The Last!)
         while (tmp->next != NULL) {
-            for (int i = 0; i <= mSize; i++) {
+            for (int i = 0; i < mSize; i++) {
                 if (index == last->ID && tmp->ID == index-1) {
+                    // Delete The Last Item.
                     tmp2 = tmp->next;;
                     tmp->next = NULL;
+                    last = tmp;
+                    mSize--;
                     delete tmp2;
                 }
+
+                if (index == 0) {
+                    // Delete The First Item
+                    first = tmp->next;
+                    mSize--;
+                }
+
                 if(tmp->next == NULL)
                     break;
                 tmp = tmp->next;
