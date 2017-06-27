@@ -78,94 +78,88 @@ void linkedlist::Traverse(){
 }
 
 void linkedlist::SearchByID(int ID){
+    int flag;
+    node *p;
+    p = first;
     if (isEmpty())
         cout<<"List Is Empty!\n";
 
     else{
-        node *tmp;
-        tmp = first;
-        int flag = 0;
-        while (tmp->next != NULL) {
-            for (int i = 0; i < mSize; i++) {
-                if (tmp->ID == ID) {
-                    cout<<"Found The First Record With The Data Of: "<<tmp->Data<<"\n";
-                    flag = 1;
-                    break;
-                }
-                if(tmp->next == NULL)
-                    break;
-                else{
-                    tmp = tmp->next;
-                }
+        for (int i = 0; i < mSize; i++) {
+            if(p->ID == ID){
+                cout<<"Found The Record With Data Of: "<<p->Data<<endl;
+                flag = 1;
+                break;
             }
 
-            if (flag == 0) {
-                cout<<"No Entry Found!\n";
-            }
+            p = p->next;
         }
+
+        if(flag == 0)
+            cout<<"No Entry Found!"<<endl;
     }
 }
 
-void linkedlist::SearchByData(type info){
+void linkedlist::SearchByData(type info){ //TODO
+    node *p;
+    p = first;
     if (isEmpty())
         cout<<"List Is Empty!\n";
 
     else{
-        node *tmp;
-        tmp = first;
-        int flag = 0;
-        while (tmp->next != NULL) {
-
-            for (int i = 0; i < mSize; i++) {
-
-                if (tmp->Data == info) {
-                    cout<<"Found The Record With The ID Of: "<<tmp->ID<<endl;
-                    flag = 1;
-                    break;
-                }
-                if(tmp->next == NULL)
-                    break;
-                tmp = tmp->next;
+        for (int i = 0; i < mSize; i++) {
+            if (p->Data == info) {
+                cout<<"Found The Record By ID Of: "<<p->ID<<endl;
             }
-        }
-        if (flag == 0) {
-            cout<<"No Entry Found."<<endl;
+            p = p->next;
         }
     }
 }
 
 void linkedlist::DeleteByIndex(int index){
-    if(isEmpty())
-        cout<<"List Is Empty!\n";
+    if (index <0 || index > mSize) {
+        throw invalid_argument("Out Of Range");
+    }
+
+    node *tmp, *tmp2;
+    tmp = tmp2 = first;
+
+    if (index == 0) {
+        first = first->next;
+        mSize--;
+        SortID();
+    }
+
     else{
-        node *tmp, *tmp2;
-        tmp = first;
-        // TODO: Sort The IDs! (Not For The Last!)
-        while (tmp->next != NULL) {
-            for (int i = 0; i < mSize; i++) {
-                if (index == last->ID && tmp->ID == index-1) {
-                    // Delete The Last Item.
-                    tmp2 = tmp->next;;
-                    tmp->next = NULL;
-                    last = tmp;
-                    mSize--;
-                    delete tmp2;
-                }
-
-                if (index == 0) {
-                    // Delete The First Item
-                    first = tmp->next;
-                    mSize--;
-                }
-
-                if(tmp->next == NULL)
-                    break;
-                tmp = tmp->next;
+        for (int i = 0; i < mSize; i++) {
+            if (i == index-1) {
+                tmp2 = tmp->next;
+                tmp->next = tmp->next->next;
+                tmp2 = 0;
+                delete tmp2;
+                mSize--;
+                break;
             }
+            tmp = tmp->next;
         }
+        SortID();
     }
 }
 
 int linkedlist::getMsize(){
     return(mSize);
+}
+
+void linkedlist::SortID(){
+    node *p;
+    p = first;
+    if (isEmpty())
+        cout<<"List Is Empty!\n";
+
+    else{
+        for (int i = 0; i < mSize; i++) {
+            p->ID = i;
+            p = p->next;
+        }
+    }
 }

@@ -13,6 +13,12 @@ int main() {
     s.Append(9);
     s.Append(5);
     s.Traverse();
-    
+    s.SearchByID(2);
+    s.SearchByData(5);
+    s.DeleteByIndex(0);
+    s.Traverse();
+    s.DeleteByIndex(3);
+    s.Traverse();
+
     return 0;
 }

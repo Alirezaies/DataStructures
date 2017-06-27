@@ -21,6 +21,7 @@ class linkedlist{
         void SearchByID(int ID);
         void SearchByData(type info);
         void DeleteByIndex(int index);
+        void SortID();
         bool isEmpty();
         int getMsize();
 
