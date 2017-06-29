@@ -163,3 +163,40 @@ void linkedlist::SortID(){
         }
     }
 }
+
+void linkedlist::insert(type record, int index){
+
+    if (isEmpty()) {
+        AddFirst(record);
+    }
+
+    if (index <0 || index > mSize) {
+        throw invalid_argument("Out Of Range!");
+    }
+
+    if (index == mSize) {
+        Append(record);
+    }
+
+    else{
+        node *p;
+        node *newRecord = new node;
+        p = first;
+        newRecord->Data = record;
+        newRecord->ID = -1;
+        cout<<newRecord->Data<<endl;
+
+        for (int i = 0; i < mSize; i++) {
+            if (i == mSize-1) {
+                newRecord->next = p->next;
+                mSize++;
+                p->next = newRecord;
+                break;
+            }
+
+            p = p->next;
+        }
+
+        SortID();
+    }
+}

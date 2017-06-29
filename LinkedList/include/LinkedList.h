@@ -7,7 +7,6 @@ struct node{
     type Data;
     int ID; //Help Us For Searching By Index;
     node *next;
-    // friend class linkedlist;
 };
 
 //linked list class
@@ -22,12 +21,13 @@ class linkedlist{
         void SearchByData(type info);
         void DeleteByIndex(int index);
         void SortID();
+        void insert(type record, int index);
         bool isEmpty();
         int getMsize();
 
     private:
-        node *first;//stor first node of link
-        node *last;//stor last node of link
+        node *first;//store first node of link
+        node *last;//store last node of link
         int mSize;
 };
 #endif
