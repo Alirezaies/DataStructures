@@ -184,7 +184,6 @@ void linkedlist::insert(type record, int index){
         p = first;
         newRecord->Data = record;
         newRecord->ID = -1;
-        cout<<newRecord->Data<<endl;
 
         for (int i = 0; i < mSize; i++) {
             if (i == mSize-1) {
