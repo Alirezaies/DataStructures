@@ -2,14 +2,13 @@
 #define LINKEDLIST_H
 
 typedef int type;
-//node class
+
 struct node{
     type Data;
     int ID; //Help Us For Searching By Index;
     node *next;
 };
 
-//linked list class
 class linkedlist{
     public:
         linkedlist();
@@ -26,8 +25,8 @@ class linkedlist{
         int getMsize();
 
     private:
-        node *first;//store first node of link
-        node *last;//store last node of link
+        node *first;
+        node *last;
         int mSize;
 };
 #endif

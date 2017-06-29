@@ -30,7 +30,6 @@ void linkedlist::AddFirst(type info){
     }
 }
 
-//add node to list and fill node
 void linkedlist::Append(type info)
 {
     int data1;
