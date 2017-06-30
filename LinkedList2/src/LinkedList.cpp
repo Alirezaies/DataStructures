@@ -10,6 +10,7 @@ linkedlist::linkedlist(){
     last = NULL;
     mSize = 0;
 }
+
 linkedlist::~linkedlist(){
     mSize = 0;
     last = 0;

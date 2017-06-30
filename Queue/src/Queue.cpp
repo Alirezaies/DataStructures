@@ -60,6 +60,7 @@ void Queue::Append(type info){
 
     }
 }
+
 bool Queue::isEmpty(){
     return (mSize == 0);
 }

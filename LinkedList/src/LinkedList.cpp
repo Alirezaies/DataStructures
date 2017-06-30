@@ -10,6 +10,7 @@ linkedlist::linkedlist(){
     last = NULL;
     mSize = 0;
 }
+
 linkedlist::~linkedlist(){
     mSize = 0;
     last = 0;
@@ -17,6 +18,7 @@ linkedlist::~linkedlist(){
     delete first;
     delete last;
 }
+
 void linkedlist::AddFirst(type info){
     if (!isEmpty())
         throw invalid_argument("This Is Not The First Node.\n");
@@ -31,8 +33,7 @@ void linkedlist::AddFirst(type info){
     }
 }
 
-void linkedlist::Append(type info)
-{
+void linkedlist::Append(type info){
     int data1;
     if(isEmpty())
     {

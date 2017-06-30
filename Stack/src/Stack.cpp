@@ -58,6 +58,7 @@ void Stack::Append(type info){
 
     }
 }
+
 bool Stack::isEmpty(){
     return (mSize == 0);
 }
