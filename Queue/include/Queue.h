@@ -1,5 +1,5 @@
-#ifndef STACK_H
-#define STACK_H
+#ifndef QUEUE_H
+#define QUEUE_H
 
 typedef int type;
 
@@ -10,10 +10,10 @@ struct node{
     node *prev;
 };
 
-class Stack{
+class Queue{
     public:
-        Stack();
-        ~Stack();
+        Queue();
+        ~Queue();
         void Push(type data);
         void Pop();
         void Traverse();
