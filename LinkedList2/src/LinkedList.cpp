@@ -171,13 +171,12 @@ void linkedlist::SortID(){
 }
 
 void linkedlist::insert(type record, int index){ //TODO
+    if (index <0 || index > mSize) {
+        throw invalid_argument("Out Of Range!");
+    }
 
     if (isEmpty()) {
         AddFirst(record);
-    }
-
-    if (index <0 || index > mSize) {
-        throw invalid_argument("Out Of Range!");
     }
 
     if (index == mSize) {

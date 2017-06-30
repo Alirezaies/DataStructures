@@ -166,12 +166,12 @@ void linkedlist::SortID(){
 
 void linkedlist::insert(type record, int index){
 
-    if (isEmpty()) {
-        AddFirst(record);
-    }
-
     if (index <0 || index > mSize) {
         throw invalid_argument("Out Of Range!");
+    }
+
+    if (isEmpty()) {
+        AddFirst(record);
     }
 
     if (index == mSize) {
