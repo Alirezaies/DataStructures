@@ -8,6 +8,7 @@ struct node{
     node *parent;
     node *left;
     node *right;
+    int layer;
 };
 
 class BTree{
@@ -19,6 +20,6 @@ class BTree{
     private:
 
         node *root;
-        int mSize;
+        int depth;
 };
 #endif

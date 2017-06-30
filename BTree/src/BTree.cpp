@@ -7,6 +7,7 @@ using namespace std;
 
 BTree::BTree(){
     root = NULL;
+    depth = 0;
 }
 
 BTree::~BTree(){
