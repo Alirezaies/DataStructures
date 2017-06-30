@@ -120,7 +120,7 @@ void linkedlist::SearchByData(type info){
     }
 }
 
-void linkedlist::DeleteByIndex(int index){ //TODO
+void linkedlist::DeleteByIndex(int index){
     if (index <0 || index > mSize) {
         throw invalid_argument("Out Of Range");
     }
@@ -170,7 +170,7 @@ void linkedlist::SortID(){
     }
 }
 
-void linkedlist::Insert(type record, int index){ //TODO
+void linkedlist::Insert(type record, int index){
     if (index < 0 || index > mSize) {
         throw invalid_argument("Out Of Range!");
     }

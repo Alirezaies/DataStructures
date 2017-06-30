@@ -22,16 +22,9 @@ int main() {
     s.Insert(19, 4);
     s.Traverse();
     cout<<"============"<<endl;
-    // s.SearchByID(2);
-    // s.SearchByData(5);
-    // s.DeleteByIndex(0);
-    // s.Traverse();
-    // cout<<"============"<<endl;
-    // s.DeleteByIndex(3);
-    // s.Traverse();
-    // cout<<"============"<<endl;
-    // s.insert(29, 1);
-    // s.Traverse();
+    s.DeleteByIndex(2);
+    s.Traverse();
+    cout<<"============"<<endl;
 
 
     return 0;
