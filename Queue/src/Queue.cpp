@@ -24,10 +24,12 @@ void Queue::Push(type data){
 
 void Queue::Pop(){
     node *tmp;
-    tmp = last;
-    last = last->prev;
-    mSize--;
+    tmp = first;
+    first = first->next;
+    first->prev = NULL;
     delete tmp;
+    mSize--;
+    SortID();
 }
 
 void Queue::Append(type info){
