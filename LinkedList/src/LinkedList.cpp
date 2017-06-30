@@ -7,6 +7,7 @@ using namespace std;
 
 linkedlist::linkedlist(){
     first = NULL;
+    last = NULL;
     mSize = 0;
 }
 linkedlist::~linkedlist(){
