@@ -5,7 +5,7 @@ using namespace std;
 
 int main() {
 
-    linkedlist s;
+    Stack s;
 
     s.Append(3);
     s.Append(7);

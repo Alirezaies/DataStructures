@@ -1,23 +1,23 @@
-#include "../include/LinkedList.h"
+#include "../include/Stack.h"
 #include<iostream>
 #include<stdexcept>
 #include <cstddef>
 
 using namespace std;
 
-linkedlist::linkedlist(){
+Stack::Stack(){
     first = NULL;
     last = NULL;
     mSize = 0;
 }
-linkedlist::~linkedlist(){
+Stack::~Stack(){
     mSize = 0;
     last = 0;
     first = 0;
     delete first;
     delete last;
 }
-void linkedlist::AddFirst(type info){
+void Stack::AddFirst(type info){
     if (!isEmpty())
         throw invalid_argument("This Is Not The First Node.\n");
     else{
@@ -31,7 +31,7 @@ void linkedlist::AddFirst(type info){
     }
 }
 
-void linkedlist::Append(type info)
+void Stack::Append(type info)
 {
     int data1;
     if(isEmpty())
@@ -59,11 +59,11 @@ void linkedlist::Append(type info)
     }
 }
 
-bool linkedlist::isEmpty(){
+bool Stack::isEmpty(){
     return (mSize == 0);
 }
 
-void linkedlist::Traverse(){
+void Stack::Traverse(){
     node *p;
     p = first;
     if (isEmpty())
@@ -77,7 +77,7 @@ void linkedlist::Traverse(){
     }
 }
 
-void linkedlist::SearchByID(int ID){
+void Stack::SearchByID(int ID){
     int flag;
     node *p;
     p = first;
@@ -100,7 +100,7 @@ void linkedlist::SearchByID(int ID){
     }
 }
 
-void linkedlist::SearchByData(type info){ //TODO
+void Stack::SearchByData(type info){ //TODO
     node *p;
     p = first;
     if (isEmpty())
@@ -116,7 +116,7 @@ void linkedlist::SearchByData(type info){ //TODO
     }
 }
 
-void linkedlist::DeleteByIndex(int index){
+void Stack::DeleteByIndex(int index){
     if (index <0 || index > mSize) {
         throw invalid_argument("Out Of Range");
     }
@@ -146,11 +146,11 @@ void linkedlist::DeleteByIndex(int index){
     }
 }
 
-int linkedlist::getMsize(){
+int Stack::getMsize(){
     return(mSize);
 }
 
-void linkedlist::SortID(){
+void Stack::SortID(){
     node *p;
     p = first;
     if (isEmpty())
@@ -164,7 +164,7 @@ void linkedlist::SortID(){
     }
 }
 
-void linkedlist::insert(type record, int index){
+void Stack::insert(type record, int index){
 
     if (index <0 || index > mSize) {
         throw invalid_argument("Out Of Range!");

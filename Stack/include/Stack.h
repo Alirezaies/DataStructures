@@ -9,10 +9,10 @@ struct node{
     node *next;
 };
 
-class linkedlist{
+class Stack{
     public:
-        linkedlist();
-        ~linkedlist();
+        Stack();
+        ~Stack();
         void AddFirst(type info);
         void Append(type info);
         void Traverse();
