@@ -5,7 +5,7 @@ typedef int type;
 
 struct node{
     type Data;
-    int ID; //Help Us For Searching By Index;
+    unsigned int ID; //Help Us For Searching By Index;
     node *next;
     node *prev;
 };
@@ -21,7 +21,7 @@ class linkedlist{
         void SearchByData(type info);
         void DeleteByIndex(int index);
         void SortID();
-        void insert(type record, int index);
+        void Insert(type record, int index);
         bool isEmpty();
         int getMsize();
 

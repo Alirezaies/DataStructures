@@ -170,8 +170,8 @@ void linkedlist::SortID(){
     }
 }
 
-void linkedlist::insert(type record, int index){ //TODO
-    if (index <0 || index > mSize) {
+void linkedlist::Insert(type record, int index){ //TODO
+    if (index < 0 || index > mSize) {
         throw invalid_argument("Out Of Range!");
     }
 
@@ -188,13 +188,14 @@ void linkedlist::insert(type record, int index){ //TODO
         node *newRecord = new node;
         p = first;
         newRecord->Data = record;
-        newRecord->ID = -1;
+        newRecord->ID = 0;
 
-        for (int i = 0; i < mSize; i++) {
-            if (i == mSize-1) {
+        for (int i = 0; i < index; i++) {
+            if (i == index-1) {
                 newRecord->next = p->next;
-                mSize++;
+                newRecord->prev = p;
                 p->next = newRecord;
+                mSize++;
                 break;
             }
 

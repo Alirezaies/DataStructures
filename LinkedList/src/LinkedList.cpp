@@ -185,8 +185,8 @@ void linkedlist::insert(type record, int index){
         newRecord->Data = record;
         newRecord->ID = -1;
 
-        for (int i = 0; i < mSize; i++) {
-            if (i == mSize-1) {
+        for (int i = 0; i < index; i++) {
+            if (i == index-1) {
                 newRecord->next = p->next;
                 mSize++;
                 p->next = newRecord;

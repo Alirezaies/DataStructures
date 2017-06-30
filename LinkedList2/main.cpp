@@ -17,7 +17,11 @@ int main() {
     s.DeleteByIndex(3);
     s.Traverse();
     cout<<"============"<<endl;
-
+    s.Insert(14, 1);
+    s.Insert(77, 3);
+    s.Insert(19, 4);
+    s.Traverse();
+    cout<<"============"<<endl;
     // s.SearchByID(2);
     // s.SearchByData(5);
     // s.DeleteByIndex(0);
