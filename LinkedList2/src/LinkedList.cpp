@@ -21,9 +21,11 @@ linkedlist::~linkedlist(){
 void linkedlist::AddFirst(type info){
     if (!isEmpty())
         throw invalid_argument("This Is Not The First Node.\n");
+
     else{
         node *tmp = new node;
         tmp->next = NULL;
+        tmp->prev = NULL;
         tmp->ID = mSize;
         last->next = tmp;
         last = tmp;
@@ -39,6 +41,7 @@ void linkedlist::Append(type info){
         //create first node
         node *tmp = new node;
         tmp->next = NULL;
+        tmp->prev = NULL;
         tmp->ID = mSize;
         first=tmp;
         first->Data = info;
@@ -50,6 +53,7 @@ void linkedlist::Append(type info){
         //create other node
         node *tmp = new node;
         tmp->next = NULL;
+        tmp->prev = last;
         tmp->ID = mSize;
         last->next = tmp;
         last = tmp;
@@ -116,7 +120,7 @@ void linkedlist::SearchByData(type info){
     }
 }
 
-void linkedlist::DeleteByIndex(int index){
+void linkedlist::DeleteByIndex(int index){ //TODO
     if (index <0 || index > mSize) {
         throw invalid_argument("Out Of Range");
     }
@@ -164,7 +168,7 @@ void linkedlist::SortID(){
     }
 }
 
-void linkedlist::insert(type record, int index){
+void linkedlist::insert(type record, int index){ //TODO
 
     if (isEmpty()) {
         AddFirst(record);

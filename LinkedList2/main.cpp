@@ -14,16 +14,16 @@ int main() {
     s.Append(5);
     s.Traverse();
     cout<<"============"<<endl;
-    s.SearchByID(2);
-    s.SearchByData(5);
-    s.DeleteByIndex(0);
-    s.Traverse();
-    cout<<"============"<<endl;
-    s.DeleteByIndex(3);
-    s.Traverse();
-    cout<<"============"<<endl;
-    s.insert(29, 1);
-    s.Traverse();
+    // s.SearchByID(2);
+    // s.SearchByData(5);
+    // s.DeleteByIndex(0);
+    // s.Traverse();
+    // cout<<"============"<<endl;
+    // s.DeleteByIndex(3);
+    // s.Traverse();
+    // cout<<"============"<<endl;
+    // s.insert(29, 1);
+    // s.Traverse();
 
 
     return 0;
