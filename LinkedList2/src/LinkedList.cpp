@@ -130,6 +130,7 @@ void linkedlist::DeleteByIndex(int index){ //TODO
 
     if (index == 0) {
         first = first->next;
+        first->prev = NULL;
         mSize--;
         SortID();
     }
@@ -139,6 +140,7 @@ void linkedlist::DeleteByIndex(int index){ //TODO
             if (i == index-1) {
                 tmp2 = tmp->next;
                 tmp->next = tmp->next->next;
+                tmp->next->prev = tmp;
                 tmp2 = 0;
                 delete tmp2;
                 mSize--;

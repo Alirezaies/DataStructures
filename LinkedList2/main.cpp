@@ -14,6 +14,10 @@ int main() {
     s.Append(5);
     s.Traverse();
     cout<<"============"<<endl;
+    s.DeleteByIndex(3);
+    s.Traverse();
+    cout<<"============"<<endl;
+
     // s.SearchByID(2);
     // s.SearchByData(5);
     // s.DeleteByIndex(0);
