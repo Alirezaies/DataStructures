@@ -8,4 +8,4 @@ LinkedList.o: include/LinkedList.h src/LinkedList.cpp
 	g++ -c include/LinkedList.h src/LinkedList.cpp
 
 clean:
-	rm -rf *.o LinkedList
+	rm -rf *.o LinkedList src/*.o
