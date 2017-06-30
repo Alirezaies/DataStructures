@@ -17,28 +17,27 @@ Stack::~Stack(){
     delete first;
     delete last;
 }
-void Stack::AddFirst(type info){
-    if (!isEmpty())
-        throw invalid_argument("This Is Not The First Node.\n");
-    else{
-        node *tmp = new node;
-        tmp->next = NULL;
-        tmp->ID = mSize;
-        last->next = tmp;
-        last = tmp;
-        last->Data = info;
-        mSize+=1;
-    }
+
+void Stack::Push(type data){
+    Append(data);
 }
 
-void Stack::Append(type info)
-{
+void Stack::Pop(){
+    node *tmp;
+    tmp = last;
+    last = last->prev;
+    mSize--;
+    delete tmp;
+}
+
+void Stack::Append(type info){
     int data1;
     if(isEmpty())
     {
         //create first node
         node *tmp = new node;
         tmp->next = NULL;
+        tmp->prev = NULL;
         tmp->ID = mSize;
         first=tmp;
         first->Data = info;
@@ -50,6 +49,7 @@ void Stack::Append(type info)
         //create other node
         node *tmp = new node;
         tmp->next = NULL;
+        tmp->prev = last;
         tmp->ID = mSize;
         last->next = tmp;
         last = tmp;
@@ -58,7 +58,6 @@ void Stack::Append(type info)
 
     }
 }
-
 bool Stack::isEmpty(){
     return (mSize == 0);
 }
@@ -100,7 +99,7 @@ void Stack::SearchByID(int ID){
     }
 }
 
-void Stack::SearchByData(type info){ //TODO
+void Stack::SearchByData(type info){
     node *p;
     p = first;
     if (isEmpty())
@@ -113,36 +112,6 @@ void Stack::SearchByData(type info){ //TODO
             }
             p = p->next;
         }
-    }
-}
-
-void Stack::DeleteByIndex(int index){
-    if (index <0 || index > mSize) {
-        throw invalid_argument("Out Of Range");
-    }
-
-    node *tmp, *tmp2;
-    tmp = tmp2 = first;
-
-    if (index == 0) {
-        first = first->next;
-        mSize--;
-        SortID();
-    }
-
-    else{
-        for (int i = 0; i < mSize; i++) {
-            if (i == index-1) {
-                tmp2 = tmp->next;
-                tmp->next = tmp->next->next;
-                tmp2 = 0;
-                delete tmp2;
-                mSize--;
-                break;
-            }
-            tmp = tmp->next;
-        }
-        SortID();
     }
 }
 
@@ -161,41 +130,5 @@ void Stack::SortID(){
             p->ID = i;
             p = p->next;
         }
-    }
-}
-
-void Stack::insert(type record, int index){
-
-    if (index <0 || index > mSize) {
-        throw invalid_argument("Out Of Range!");
-    }
-
-    if (isEmpty()) {
-        AddFirst(record);
-    }
-
-    if (index == mSize) {
-        Append(record);
-    }
-
-    else{
-        node *p;
-        node *newRecord = new node;
-        p = first;
-        newRecord->Data = record;
-        newRecord->ID = -1;
-
-        for (int i = 0; i < index; i++) {
-            if (i == index-1) {
-                newRecord->next = p->next;
-                mSize++;
-                p->next = newRecord;
-                break;
-            }
-
-            p = p->next;
-        }
-
-        SortID();
     }
 }

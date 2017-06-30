@@ -1,11 +1,11 @@
-LinkedList: main.o src/LinkedList.o
-	g++ -o LinkedList main.o src/LinkedList.o
+Stack: main.o src/Stack.o
+	g++ -o Stack main.o src/Stack.o
 
-main.o: main.cpp src/LinkedList.o
+main.o: main.cpp src/Stack.o
 	g++ -c main.cpp
 
-LinkedList.o: include/LinkedList.h src/LinkedList.cpp
-	g++ -c include/LinkedList.h src/LinkedList.cpp
+Stack.o: include/Stack.h src/Stack.cpp
+	g++ -c include/Stack.h src/Stack.cpp
 
 clean:
-	rm -rf *.o LinkedList src/*.o
+	rm -rf *.o Stack src/*.o

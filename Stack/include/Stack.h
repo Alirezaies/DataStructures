@@ -5,28 +5,31 @@ typedef int type;
 
 struct node{
     type Data;
-    int ID; //Help Us For Searching By Index;
+    int ID;
     node *next;
+    node *prev;
 };
 
 class Stack{
     public:
         Stack();
         ~Stack();
-        void AddFirst(type info);
-        void Append(type info);
+        void Push(type data);
+        void Pop();
         void Traverse();
         void SearchByID(int ID);
         void SearchByData(type info);
-        void DeleteByIndex(int index);
-        void SortID();
-        void insert(type record, int index);
         bool isEmpty();
         int getMsize();
 
     private:
-        node *first;
-        node *last;
+        node *first; //Bottom
+        node *last; //Top
+
+        void Append(type Data);
+        void SortID();
+
+        bool underflow = true;
         int mSize;
 };
 #endif
